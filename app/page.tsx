@@ -26,7 +26,39 @@ export default function Home(){
  <section className="section intro"><div><p className="eyebrow">SMART RENTAL SOLUTIONS</p><h2>Right equipment.<br/>Right project.</h2></div><p>Browse the Trident fleet, review specifications and tell us your site requirement. Availability is confirmed against project location and rental dates.</p></section>
  <section id="equipment" className="section equipment-section"><p className="eyebrow">OUR EQUIPMENT</p><div className="section-head"><div><h2>Explore our fleet.</h2><p>All 20 equipment types are maintained in Supabase. Current and upcoming divisions are clearly separated.</p></div><span>{visible.length} shown / {equipment.length||20} total</span></div><div className="toolbar"><input aria-label="Search equipment" placeholder="Search equipment, capacity, application…" value={search} onChange={e=>setSearch(e.target.value)}/><div className="filters">{names.map(x=><button key={x} className={filter===x?'active':''} onClick={()=>setFilter(x)}>{x}</button>)}</div></div>{loading?<p>Loading fleet…</p>:<><div className="fleet-label"><b>Available Equipment</b><span>{available.length} types</span></div><div className="grid">{visible.filter(e=>e.availability_status!=='coming_soon').map(e=><article className="card" key={e.id}><div className="image-placeholder">{getImage(e)?<img src={getImage(e)} alt={e.name} loading="lazy"/>:<span>TRIDENT</span>}</div><div className="card-body"><p>{cmap.get(e.category_id)||''}</p><h3>{e.name}</h3><strong>{e.height||e.capacity||e.load_capacity||e.equipment_type||'Equipment'}</strong><small>{e.application||e.short_description||'Project applications'}</small><span className="status">Available on request</span><button onClick={()=>setSelected(e)}>View Details <b>→</b></button></div></article>)}</div><div className="fleet-label coming"><b>Coming Soon</b><span>{coming.length} types</span></div><div className="grid">{visible.filter(e=>e.availability_status==='coming_soon').map(e=><article className="card coming-card" key={e.id}><div className="image-placeholder"><div className="soon-mark">TRIDENT<span>COMING SOON</span></div></div><div className="card-body"><p>{cmap.get(e.category_id)||''}</p><h3>{e.name}</h3><strong>{e.height||e.capacity||e.load_capacity||e.equipment_type||'Equipment'}</strong><small>{e.application||e.short_description||'Upcoming equipment division'}</small><span className="status soon">Coming Soon</span><button onClick={()=>setSelected(e)}>View Details <b>→</b></button></div></article>)}</div></>}{!loading&&!visible.length&&<p>No equipment found.</p>}</section>
  <section id="solutions" className="band"><p className="eyebrow">OUR SOLUTIONS</p><h2>{activeIndustry?`${activeIndustry} solutions.`:'Support beyond the machine.'}</h2><div className="solution-grid"><article><span>01</span><h3>Requirement & Selection</h3><p>Share height, load, application, site and rental duration.</p></article><article><span>02</span><h3>Quotation & Planning</h3><p>Coordinate quotation and delivery requirements with Trident.</p></article><article><span>03</span><h3>Deployment & Support</h3><p>Support around deployment, maintenance and the rental period.</p></article></div></section>
- <section id="industries" className="section"><p className="eyebrow">INDUSTRIES WE SERVE</p><h2>Built around project requirements.</h2><div className="industry-grid">{industries.map((x,i)=><button className="industry-item" key={x} onClick={()=>{setActiveIndustry(x);go('solutions')}}><small>0{i+1}</small><strong>{x}</strong><span>Explore solutions →</span></button>)}</div></section>
+ <section id="industries" className="section industries-section">
+  <p className="eyebrow">INDUSTRIES WE SERVE</p>
+  <h2>Built around project requirements.</h2>
+
+  <div className="industry-grid">
+    {industries.map((x, i) => (
+      <button
+        className="industry-item"
+        key={x}
+        onClick={() => {
+          setActiveIndustry(x);
+          go("solutions");
+        }}
+        style={{
+  backgroundImage: `url(/industry/0${i + 1}-${[
+    "infrastructure",
+    "warehouse",
+    "manufacturing",
+    "industrial-maintenance",
+    "residential-commercial",
+    "events",
+  ][i]}.webp)`,
+}}
+      >
+        <div className="industry-overlay">
+          <small>0{i + 1}</small>
+          <strong>{x}</strong>
+          <span>Explore solutions →</span>
+        </div>
+      </button>
+    ))}
+  </div>
+</section>
  <section id="locations" className="location-band"><div><p className="eyebrow">PROJECT LOCATIONS</p><h2>Equipment support where your project needs it.</h2><p>Tell us your project location and rental dates. Trident will confirm deployment options.</p></div><button className="primary" onClick={()=>openQuote()}>Check Availability</button></section>
  <section id="resources" className="section resources"><p className="eyebrow">RESOURCES</p><h2>Rental knowledge for project teams.</h2><div className="resource-grid"><article><small>EQUIPMENT GUIDE</small><h3>How to select the right access equipment</h3><p>Match working height, reach, site conditions and application before requesting a quote.</p></article><article><small>RENTAL PROCESS</small><h3>From requirement to deployment</h3><p>Requirement → selection → quotation → planning → deployment → support.</p></article><article><small>FAQ</small><h3>Rental questions</h3><p>Availability, project location, duration and equipment requirements are confirmed with the enquiry.</p></article></div></section>
  <section id="about" className="section split"><div><p className="eyebrow">ABOUT TRIDENT</p><h2>Partners in Progress.</h2><p className="about-lead">Trident Trinity Assets Private Limited is building an equipment rental platform around dependable machines, responsive service and practical project support.</p></div><div><p>Current operating divisions: Access & Lifting and Material Handling. Power & Support and Earth Moving & Mining are presented as Coming Soon.</p></div></section>
