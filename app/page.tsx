@@ -50,7 +50,7 @@ export default function Home(){
           go("solutions");
         }}
         style={{
-  backgroundImage: `url(/industry/0${i + 1}-${[
+  backgroundImage: `url(/trident/industry/0${i + 1}-${[
     "infrastructure",
     "warehouse",
     "manufacturing",
