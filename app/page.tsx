@@ -7,8 +7,18 @@ type Category={id:string;name:string;status:string;sort_order:number}
 type EquipmentImage={image_url:string;alt_text:string|null;is_primary:boolean}
 type Equipment={id:string;category_id:string;name:string;short_description:string|null;equipment_type:string|null;capacity:string|null;height:string|null;load_capacity:string|null;total_quantity:number|null;application:string|null;status:string;availability_status:string;equipment_images?:EquipmentImage[]}
 const industries=['Infrastructure & Construction','Warehouse & Logistics','Manufacturing','Industrial Maintenance','Residential & Commercial','Events & Exhibitions']
-const localImages:Record<string,string>={'Boom Lift 60 ft (18.3 m)':'/trident/equipment/boom-lift-60ft.svg','Boom Lift 80 ft (24.4 m)':'/trident/equipment/boom-lift-80ft.svg','Boom Lift 100 ft (30.5 m)':'/trident/equipment/boom-lift-100ft.svg','Scissor Lift 12 m Electric':'/trident/equipment/scissor-lift-12m.svg','Scissor Lift 16 m Electric':'/trident/equipment/scissor-lift-16m.svg','Truck Mounted Boom Lift 28 m':'/trident/equipment/truck-mounted-boom-lift-28m.svg','Spider Lift 18 m':'/trident/equipment/spider-lift-18m.svg','Telehandler 17 m / 4.5 ton':'/trident/equipment/telehandler-17m-4-5t.svg','Forklift 3 ton Diesel':'/trident/equipment/forklift-3t-diesel.svg','Forklift 5 ton Diesel':'/trident/equipment/forklift-5t-diesel.svg','Diesel Generator Set 125 KVA':'/trident/equipment/diesel-generator.svg','Diesel Generator Set 250 KVA':'/trident/equipment/diesel-generator.svg'}
-
+const localImages: Record<string,string> = {
+  'Boom Lift 100 ft (30.5 m)': '/trident/equipment/boom-lift-100-ft-305-m.jpg',
+  'Boom Lift 60 ft (18.3 m)': '/trident/equipment/boom-lift-60-ft-183-m.jpg',
+  'Boom Lift 80 ft (24.4 m)': '/trident/equipment/boom-lift-80-ft-244-m.jpg',
+  'Scissor Lift 12 m Electric': '/trident/equipment/scissor-lift-12-m-electric.jpg',
+  'Scissor Lift 16 m Electric': '/trident/equipment/scissor-lift-16-m-electric.jpg',
+  'Spider Lift 18 m': '/trident/equipment/spider-lift-18-m.jpg',
+  'Telehandler 17 m / 4.5 ton': '/trident/equipment/telehandler-17-m-45-ton.jpg',
+  'Truck Mounted Boom Lift 28 m': '/trident/equipment/truck-mounted-boom-lift-28-m.jpg',
+  'Forklift 3 ton Diesel': '/trident/equipment/forklift-3-ton-diesel.jpg',
+  'Forklift 5 ton Diesel': '/trident/equipment/forklift-5-ton-diesel.jpg',
+}
 export default function Home(){
  const [categories,setCategories]=useState<Category[]>([]),[equipment,setEquipment]=useState<Equipment[]>([]),[filter,setFilter]=useState('All'),[search,setSearch]=useState(''),[selected,setSelected]=useState<Equipment|null>(null),[quoteOpen,setQuoteOpen]=useState(false),[menuOpen,setMenuOpen]=useState(false),[activeIndustry,setActiveIndustry]=useState(''),[loading,setLoading]=useState(true),[submitState,setSubmitState]=useState('')
  useEffect(()=>{(async()=>{const [c,e]=await Promise.all([supabase.from('equipment_categories').select('id,name,status,sort_order').order('sort_order'),supabase.from('equipment').select('id,category_id,name,short_description,equipment_type,capacity,height,load_capacity,total_quantity,application,status,availability_status,equipment_images(image_url,alt_text,is_primary)').eq('status','active').order('name')]);setCategories(c.data||[]);setEquipment(e.data||[]);setLoading(false)})()},[])
