@@ -161,3 +161,25 @@
 .footer-brand img{width:58px;height:58px;display:block;object-fit:contain;object-position:center;border-radius:50%;background:transparent;padding:0;margin:0;grid-row:1 / span 2}
 .footer-brand b,.footer-brand p{margin-left:0}
 @media(max-width:760px){.brand img{width:50px;height:50px;flex-basis:50px}.brand{height:50px}.footer-brand{grid-template-columns:50px 1fr}.footer-brand img{width:50px;height:50px}}
+
+
+/* Logo: show only the actual circular artwork */
+.brand img{
+  width:58px;height:58px;flex:0 0 58px;
+  object-fit:contain;object-position:center;
+  background:transparent!important;border:0;border-radius:0;
+  clip-path:circle(49.15% at 50.4% 49.9%);
+  transform:scale(1.02);display:block;margin:0;padding:0;
+}
+.footer-brand img{
+  width:58px;height:58px;
+  object-fit:contain;object-position:center;
+  background:transparent!important;border:0;border-radius:0;
+  clip-path:circle(49.15% at 50.4% 49.9%);
+  transform:scale(1.02);display:block;margin:0;padding:0;
+  grid-row:1 / span 2;
+}
+@media(max-width:760px){
+  .brand img{width:50px;height:50px;flex-basis:50px}
+  .footer-brand img{width:50px;height:50px}
+}
