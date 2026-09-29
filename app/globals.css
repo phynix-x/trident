@@ -15,3 +15,28 @@
 .hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.68) 52%,rgba(255,255,255,.25) 100%);z-index:1;pointer-events:none;}
 .hero-copy{position:relative;z-index:2;}
 @media(max-width:760px){.hero-bg-image{object-position:center center}.hero-bg-overlay{background:linear-gradient(90deg,rgba(255,255,255,.92),rgba(255,255,255,.68));}}
+
+
+/* Soft rounded UI */
+.quote,.primary,.secondary,.filters button,.hamburger,.card>button,.mobile-menu-quote{border-radius:10px}
+.drop-menu{border-radius:14px;overflow:hidden}
+.drop-menu button{border-radius:8px}
+.toolbar input,.modal-box input,.modal-box textarea{border-radius:10px}
+.card{border-radius:16px;overflow:hidden}
+.image-placeholder{border-radius:0}
+.fleet-label{border-radius:12px}
+.solution-grid{gap:14px;background:transparent}
+.solution-grid article{border:1px solid #e0e2e5;border-radius:16px}
+.industry-grid{gap:14px;border:0}
+.industry-grid .industry-item{border:0!important;border-radius:18px}
+.resource-grid article{border-radius:16px}
+.detail-image{border-radius:14px}
+.modal-box{border-radius:18px}
+.detail-specs div{border-radius:12px}
+.hero-photo,.hero-brand{border-radius:16px}
+.footer-brand img{border-radius:12px}
+@media(max-width:760px){
+  .mobile-menu{border-radius:0 0 18px 18px}
+  .mobile-tabs button{border-radius:10px}
+  .industry-grid .industry-item{border-radius:16px}
+}
