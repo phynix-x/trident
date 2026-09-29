@@ -196,3 +196,10 @@
   .footer-brand{grid-template-columns:60px 1fr}
   .footer-brand img{width:60px;height:60px}
 }
+
+
+/* Trident logo red outline */
+.brand img,.footer-brand img{
+  border:2px solid #a91f2b;
+  box-sizing:border-box;
+}
