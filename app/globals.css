@@ -9,11 +9,6 @@
 .industry-grid .industry-overlay span{margin-top:auto;position:static;font-size:12px;color:#fff}
 .industry-grid .industry-item:hover,.industry-grid .industry-item.selected{background-color:rgba(247,247,247,.12);background-size:cover;background-position:center}
 
-/* Production hero background */
-.hero{grid-template-columns:1fr;background:linear-gradient(90deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.72) 52%,rgba(255,255,255,.30) 100%),url("/trident/hero-bg.jpg") center/cover no-repeat;}
-.hero-copy{max-width:760px;}
-.hero-panel{display:none!important;}
-@media(max-width:760px){.hero{min-height:620px;background-position:center center;background:linear-gradient(90deg,rgba(255,255,255,.91),rgba(255,255,255,.68)),url("/trident/hero-bg.jpg") center/cover no-repeat;}.hero-copy{max-width:none;}}
 
 /* Hero image reliability fix for static GitHub Pages */
 .hero{position:relative;overflow:hidden;background:#f5f5f4!important;}
