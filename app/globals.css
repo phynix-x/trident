@@ -448,3 +448,7 @@ footer .footer-brand p{max-width:430px}
   .floating-icon{width:30px;height:30px;border-radius:50%;background:transparent;border:0;font-size:22px}
   .floating-contact-item:first-child .floating-icon{background:transparent;border:0}
 }
+
+
+/* Contact icon SVGs */
+.contact-icon-svg{width:22px;height:22px;display:block;flex:0 0 22px}.footer-contact-icon-svg{width:17px;height:17px;display:inline-block;vertical-align:-4px;margin-right:5px}.floating-icon-svg{width:30px;height:30px;display:block}.floating-contact-item .floating-icon-svg{color:#fff}.floating-contact-item:nth-child(3) .floating-icon-svg{color:#25D366}@media(max-width:760px){.floating-icon-svg{width:30px;height:30px}}
