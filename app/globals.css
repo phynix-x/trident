@@ -431,3 +431,18 @@ footer .footer-brand p{max-width:430px}
   .about-points{grid-template-columns:1fr;gap:3px}
   .direct-contact{display:grid}
 }
+
+
+/* Floating quick-contact bar */
+.floating-contact{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;width:82px;border-radius:14px 0 0 14px;overflow:hidden;background:rgba(15,31,75,.96);box-shadow:0 14px 38px rgba(10,20,50,.24);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(14px)}
+.floating-contact-item{min-height:76px;padding:9px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#fff!important;text-decoration:none!important;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.14);font:inherit;font-size:10px;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.floating-contact-item:last-child{border-bottom:0}
+.floating-contact-item:hover{background:rgba(255,255,255,.12);transform:translateX(-2px)}
+.floating-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-size:17px;line-height:1}
+.floating-contact-item:first-child .floating-icon{background:var(--tr-red);border-color:rgba(255,255,255,.35)}
+@media(max-width:760px){
+  .floating-contact{top:auto;bottom:16px;right:14px;transform:none;width:auto;flex-direction:row;border-radius:999px;padding:5px;background:rgba(15,31,75,.94)}
+  .floating-contact-item{min-height:46px;width:52px;padding:5px 3px;gap:2px;border-bottom:0;border-right:1px solid rgba(255,255,255,.14);font-size:8px}
+  .floating-contact-item:last-child{border-right:0}
+  .floating-icon{width:24px;height:24px;font-size:14px}
+}
