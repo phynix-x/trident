@@ -633,6 +633,7 @@ footer .footer-brand p{max-width:430px}
   flex:0 0 22px!important;
   color:#fff!important;
 }
+.floating-contact .call-item{background:#19306c!important;color:#fff!important;border-color:transparent!important}
 .floating-contact .call-item .floating-icon-svg{color:#fff!important}
 .floating-contact .whatsapp-item .floating-icon-svg{color:#fff!important}
 .floating-contact .quote-item .floating-icon-svg{color:#fff!important}
