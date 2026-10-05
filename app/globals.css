@@ -477,3 +477,49 @@ footer .footer-brand p{max-width:430px}
 .contact>div{min-width:0;flex:1}.contact h2{max-width:760px;overflow-wrap:anywhere}.contact p:not(.eyebrow){max-width:760px}.direct-contact{width:100%;align-items:stretch}.direct-contact>a,.direct-contact>span{box-sizing:border-box;min-width:0;overflow:hidden}.direct-contact>a{display:flex!important;align-items:center;gap:9px;color:#f4f5f7!important;text-decoration:none!important;overflow-wrap:anywhere}.direct-contact>a:hover{color:#fff!important}.direct-contact>a>span:last-child{min-width:0;overflow-wrap:anywhere}.direct-contact>a b{color:#fff!important;text-decoration:none!important}.direct-contact>span{overflow-wrap:anywhere}.footer-brand{min-width:0;align-items:start!important}.footer-brand img{align-self:start!important}.footer-brand>div{min-width:0}.footer-brand>div>b{display:block;line-height:1.35}.footer-brand p{overflow-wrap:anywhere}
 @media(min-width:761px){.direct-contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.direct-contact>span{grid-column:1 / -1}.contact{align-items:flex-start}.footer-brand img{width:70px!important;height:70px!important}}
 @media(max-width:760px){.contact{overflow:hidden}.contact>div{width:100%;min-width:0}.contact h2{font-size:34px;line-height:1.08;overflow-wrap:anywhere}.contact p:not(.eyebrow){font-size:16px;line-height:1.6;overflow-wrap:anywhere}.direct-contact{display:flex!important;flex-direction:column!important;width:100%!important;gap:10px}.direct-contact>a,.direct-contact>span{width:100%!important;min-width:0!important;max-width:100%!important}.direct-contact>a{padding:12px 13px!important}.direct-contact>a>span:last-child{min-width:0!important;overflow-wrap:anywhere}.footer-brand{grid-template-columns:64px minmax(0,1fr)!important;column-gap:14px!important;align-items:start!important}.footer-brand img{width:64px!important;height:64px!important;align-self:start!important}.footer-brand>div{min-width:0!important}.footer-brand>div>b{font-size:11px!important}.footer-brand p{font-size:11px!important;line-height:1.5!important}}
+
+
+/* Mobile footer contact buttons — screenshot layout */
+@media(max-width:760px){
+  body{padding-bottom:112px!important}
+  .floating-contact{
+    height:96px!important;
+    padding:10px 10px 12px!important;
+    gap:10px!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    background:#fff!important;
+    border-top:1px solid #e5e7eb!important;
+    box-shadow:0 -5px 18px rgba(16,24,40,.10)!important;
+    overflow:visible!important;
+  }
+  .floating-contact-item{
+    min-height:76px!important;
+    height:76px!important;
+    border:2px solid transparent!important;
+    border-radius:20px!important;
+    padding:0 8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:22px!important;
+    font-weight:700!important;
+    letter-spacing:0!important;
+    box-shadow:none!important;
+  }
+  .floating-contact .call-item{
+    background:#fff!important;
+    color:#a91f2b!important;
+    border-color:#a91f2b!important;
+  }
+  .floating-contact .whatsapp-item{
+    background:#13804f!important;
+    color:#fff!important;
+  }
+  .floating-contact .quote-item{
+    background:#b3162a!important;
+    color:#fff!important;
+  }
+  .floating-contact-item:hover{
+    transform:none!important;
+  }
+}
