@@ -528,10 +528,10 @@ footer .footer-brand p{max-width:430px}
 /* Desktop floating contact buttons — same Call / WhatsApp / Quote treatment */
 @media(min-width:761px){
   .floating-contact{
-    right:24px!important;
-    top:auto!important;
-    bottom:24px!important;
-    transform:none!important;
+    right:0!important;
+    top:50%!important;
+    bottom:auto!important;
+    transform:translateY(-50%)!important;
     width:min(540px,calc(100vw - 48px))!important;
     height:82px!important;
     padding:8px!important;
