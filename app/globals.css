@@ -633,8 +633,8 @@ footer .footer-brand p{max-width:430px}
   flex:0 0 22px!important;
   color:#fff!important;
 }
-.floating-contact .call-item{background:#19306c!important;color:#fff!important;border-color:transparent!important}
-.floating-contact .call-item .floating-icon-svg{color:#fff!important}
+.floating-contact .call-item{background:#fff!important;color:#111!important;border-color:#e5e7eb!important}
+.floating-contact .call-item .floating-icon-svg{color:#111!important}
 .floating-contact .whatsapp-item .floating-icon-svg{color:#fff!important}
 .floating-contact .quote-item .floating-icon-svg{color:#fff!important}
 @media(max-width:760px){
@@ -676,8 +676,8 @@ footer .footer-brand p{max-width:430px}
     gap:5px!important;
   }
   .floating-contact-item:last-child{border-right:0!important}
-  .floating-contact .call-item{background:#19306c!important;color:#fff!important;border-color:transparent!important}
-  .floating-contact .call-item .floating-icon-svg{color:#fff!important}
+  .floating-contact .call-item{background:#fff!important;color:#111!important;border-color:#e5e7eb!important}
+  .floating-contact .call-item .floating-icon-svg{color:#111!important}
   .floating-contact-item:hover{transform:none!important;background:#233e82!important}
   .floating-icon-svg{width:22px!important;height:22px!important;flex-basis:22px!important}
 }
